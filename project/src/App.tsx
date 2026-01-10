@@ -48,6 +48,14 @@ function App() {
       linkType: "linkedin"
     },
     {
+      title: "Odoo-n8n-retell Voice agent and automation system",
+      description: "AI-powered voice agent and automation system for Odoo using n8n, twilio and Retell.",
+      tech: ["JavaScript", "AI", "Odoo", "n8n", "Twilio", "Retell"],
+      github: "https://www.linkedin.com/feed/update/urn:li:activity:7415713518483906560/",
+      gradient: "from-emerald-500 to-teal-500",
+      linkType: "linkedin"
+    },
+    {
       title: "Google Calendar AI Assistant",
       description: "Intelligent calendar management system using LangGraph and MCP(Model Context Protocol) for contextual scheduling and memory",
       tech: ["Python", "LangGraph", "AI", "MCP"],
@@ -56,12 +64,12 @@ function App() {
       linkType: "github"
     },
     {
-      title: "Job_Matching_and-_Candidate_Analysis_Tool ",
-      description: "A FastAPI-based tool that takes a candidate's CV (PDF/DOCX) and explainatory video, analyses them against a job matching prompt and returns a candidate rating (out of 10) based on match and performance.",
-      tech: ["Python", "Groq", "ffmpeg", "Whisper"],
-      github: "https://www.linkedin.com/posts/asad-intwala_generativeai-aiprojects-llama3-activity-7265323196545978371-Af1g?utm_source=share&utm_medium=member_desktop&rcm=ACoAABSc2GYBqHoM_kIdm-OW55tt6b8yu5M04tQ",
-      gradient: "from-orange-500 to-red-500",
-      linkType: "linkedin"
+      title: "Whatsapp AI Chatbot with tool calling",
+      description: "Intelligent Whatsapp chatbot that wor as hosiptal customer care using developer.facebbook platform to complete tool calling and perform actions of RAG, check availability, book appointment with doctors in google calendar and send confirmation mails.",
+      tech: ["Python", "AI", "GenAI SDK"],
+      github: "https://github.com/asadintwala/Whatsapp_tool_calling",
+      gradient: "from-blue-500 to-cyan-500",
+      linkType: "github"
     },
     {
       title: "Content Creator App",
@@ -71,14 +79,6 @@ function App() {
       gradient: "from-yellow-500 to-orange-500",
       linkType: "github"
     }
-    // {
-    //   title: "GenAI Tweet Generator",
-    //   description: "Streamlit application that generates contextual tweets using generative AI based on user-provided topics",
-    //   tech: ["Python", "Streamlit", "GenAI"],
-    //   github: "https://github.com/asadintwala/GenAi-Tweet-App",
-    //   gradient: "from-sky-500 to-blue-500",
-    //   linkType: "github"
-    // }
   ];
 
   return (
