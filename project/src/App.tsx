@@ -72,10 +72,10 @@ function App() {
       linkType: "github"
     },
     {
-      title: "Content Creator App",
-      description: "AI-driven personalized app built on the CrewAI framework that helps content creators and social media influencers to generate and manage creative contents.",
-      tech: ["Python", "CrewAI", "Agentic AI"],
-      github: "https://github.com/asadintwala/Content_Creator_CrewAI",
+      title: "Ai Stock Price Predictor",
+      description: "Combining AI and technical parameter for stock analysis(candle chart, financials, news) and price prediction with backtesting.",
+      tech: ["node.js", "html", "css"],
+      github: "https://github.com/asadintwala/ai-stock-price-predictor",
       gradient: "from-yellow-500 to-orange-500",
       linkType: "github"
     }
@@ -202,7 +202,7 @@ function App() {
               <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Code2 className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-emerald-400">Full-Stack Developer</h3>
+              <h3 className="text-2xl font-bold mb-4 text-emerald-400">AI Full-Stack Developer</h3>
               <p className="text-slate-400 leading-relaxed">
                 Proficient in Python, React, Node.js, and modern AI frameworks. Building scalable applications
                 that seamlessly integrate intelligent features with beautiful user experiences.
