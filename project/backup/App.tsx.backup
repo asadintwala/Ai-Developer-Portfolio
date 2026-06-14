@@ -244,10 +244,9 @@ const JOURNEY_PHASES = [
       'Ran a clinical pathology lab — performing hematology, biochemistry, and microbiology tests. Developed precision, data accuracy, and process optimization skills that I carry into every AI system I build today.',
     education: 'Diploma in Medical Lab Technology',
     institution: 'Gujarat Institute of Technical Education, Surat',
-    image: '/photos/lab_microscope.jpeg',
+    image: '/photos/lab_microscope.jpg',
     imageAlt: 'Working at the pathology lab — analyzing samples under the microscope',
     color: 'amber',
-    imagePosition: 'center 15%',
   },
   {
     period: '2022 – 2024',
@@ -256,7 +255,7 @@ const JOURNEY_PHASES = [
       'Made the leap from healthcare to tech. Studied Python, machine learning, deep learning, and NLP — building projects that bridged my medical background with data-driven problem solving.',
     education: 'Data Science',
     institution: 'Govardhan Institute, Surat',
-    image: '/photos/lab_portrait.png',
+    image: '/photos/lab_portrait.jpg',
     imageAlt: 'The pivot — deciding to transition from lab coat to code',
     color: 'blue',
     projects: [
@@ -269,7 +268,6 @@ const JOURNEY_PHASES = [
         url: 'https://www.linkedin.com/posts/asad-intwala_atliq-amazon-power-bi-report-activity-7127665561701933057-azzY',
       },
     ],
-    imagePosition: 'center 15%',
   },
   {
     period: '2024 – Present',
@@ -277,10 +275,9 @@ const JOURNEY_PHASES = [
     description:
       'Now building production AI systems — from clinical report analyzers to voice agents and MCP servers. The analytical rigor from the lab shapes every system I design.',
     companies: 'WebOsmotic · Appscrip · Evify · GHMC',
-    image: '/photos/profile.png',
+    image: '/photos/profile.jpg',
     imageAlt: 'Today — building AI solutions for real-world problems',
     color: 'emerald',
-    imagePosition: 'center 20%',
   },
 ];
 
@@ -516,13 +513,12 @@ function App() {
             <div className="hidden lg:block flex-shrink-0">
               <div
                 className="w-64 h-80 rounded-2xl overflow-hidden shadow-xl ring-4 ring-white rotate-2 cursor-pointer hover:rotate-0 transition-transform duration-500 group"
-                onClick={() => setLightboxImage({ src: '/photos/profile.png', alt: 'Asad Intwala' })}
+                onClick={() => setLightboxImage({ src: '/photos/profile.jpg', alt: 'Asad Intwala' })}
               >
                 <img
-                  src="/photos/profile.png"
+                  src="/photos/profile.jpg"
                   alt="Asad Intwala"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: 'center 20%' }}
                   onError={(e) => {
                     (e.currentTarget.closest('.rounded-2xl') as HTMLElement).style.display = 'none';
                   }}
@@ -853,7 +849,6 @@ function App() {
                     src={phase.image}
                     alt={phase.imageAlt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    style={{ objectPosition: phase.imagePosition || 'center' }}
                     onError={handleImgError}
                   />
                   <div className={`absolute inset-0 bg-slate-200 items-center justify-center hidden`}>
