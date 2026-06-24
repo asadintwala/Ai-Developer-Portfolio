@@ -225,7 +225,7 @@ const PROJECTS: Project[] = [
     description:
       'Hospital customer care chatbot on WhatsApp using the developer.facebook platform. Performs RAG-based Q&A, checks doctor availability, books appointments in Google Calendar, and sends confirmation emails — all via tool calling.',
     tech: ['Python', 'GenAI SDK', 'RAG', 'Google Calendar API'],
-    image: null,
+    image: '/projects/whatsapp_bot.jpg',
     highlights: [
       'Tool-calling for multi-step workflows',
       'RAG-powered medical Q&A',
@@ -782,14 +782,13 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {PROJECTS.map((project, idx) => {
               const isExpanded = !!expandedProjs[idx];
               return (
                 <div
                   key={idx}
-                  onClick={() => toggleProj(idx)}
-                  className={`fade-up group project-card rounded-xl border overflow-hidden transition-all duration-300 flex flex-col cursor-pointer select-none ${
+                  className={`group project-card rounded-xl border overflow-hidden transition-all duration-300 flex flex-col ${
                     isExpanded 
                       ? 'bg-white border-slate-200 shadow-sm' 
                       : 'bg-stone-50 border-slate-100 hover:border-slate-200 hover:bg-white hover:shadow-sm'
@@ -838,7 +837,11 @@ function App() {
 
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-start justify-between gap-4 mb-2">
+                    {/* Clickable header area for expand/collapse */}
+                    <div 
+                      className="flex items-start justify-between gap-4 mb-2 cursor-pointer select-none"
+                      onClick={() => toggleProj(idx)}
+                    >
                       <div>
                         <h3 className="text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
                           {project.title}
@@ -858,7 +861,7 @@ function App() {
                       </div>
                     </div>
 
-                    <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                    <p className="text-sm text-slate-500 leading-relaxed mb-4 select-text">
                       {project.description}
                     </p>
 
@@ -898,7 +901,10 @@ function App() {
 
                     {/* Toggle Prompt */}
                     {!isExpanded && (
-                      <div className="mb-4 text-[11px] text-slate-500 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div 
+                        onClick={() => toggleProj(idx)}
+                        className="mb-4 text-[11px] text-slate-500 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer select-none"
+                      >
                         <ChevronDown size={12} className="text-slate-400" />
                         <span>Click card to view accomplishments & impact</span>
                       </div>
