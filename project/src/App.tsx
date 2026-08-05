@@ -13,13 +13,17 @@ import {
   Phone,
   ChevronUp,
   ChevronDown,
+  Video,
+  Sparkles,
+  Instagram,
+  Play,
 } from 'lucide-react';
 
 /* ────────────────────────────────────────────
    Data
    ──────────────────────────────────────────── */
 
-const NAV_ITEMS = ['About', 'Skills', 'Experience', 'Projects', 'Journey', 'Contact'];
+const NAV_ITEMS = ['About', 'Skills', 'Experience', 'Projects', 'Advocacy', 'Journey', 'Contact'];
 
 const SKILL_CATEGORIES = [
   { name: 'Languages', items: ['Python', 'SQL'] },
@@ -27,16 +31,16 @@ const SKILL_CATEGORIES = [
     name: 'AI / Machine Learning',
     items: [
       'Machine Learning', 'Deep Learning', 'NLP', 'Generative AI',
-      'RAG', 'LLMs', 'Agentic AI', 'MCP', 'Voice AI', 'Multi-Agent Systems',
+      'RAG', 'Hybrid Retrieval', 'LLMs', 'Agentic AI', 'MCP', 'Voice AI', 'Multi-Agent Systems',
     ],
   },
   {
     name: 'Frameworks & Libraries',
-    items: ['FastAPI', 'TensorFlow', 'Keras', 'LangChain', 'LangGraph', 'FastMCP', 'REST APIs'],
+    items: ['FastAPI', 'TensorFlow', 'Keras', 'LangChain', 'LangGraph', 'FastMCP', 'asyncio', 'Tenacity', 'REST APIs'],
   },
-  { name: 'Databases', items: ['SQL', 'NoSQL', 'Vector Databases'] },
+  { name: 'Databases', items: ['SQL', 'NoSQL', 'VectorDB (Milvus)'] },
+  { name: 'Cloud & DevOps', items: ['AWS (Lambda, SQS, S3, IAM)', 'Amazon Bedrock', 'GitHub Actions (OIDC CI/CD)', 'Docker'] },
   { name: 'Tools', items: ['Git', 'Postman', 'n8n', 'Zapier'] },
-  { name: 'Cloud & DevOps', items: ['AWS (Lambda, S3)', 'Docker'] },
 ];
 
 const EXPERIENCE = [
@@ -47,8 +51,12 @@ const EXPERIENCE = [
     period: 'Jun 2025 – Present',
     current: true,
     bullets: [
+      'Narad (TPRM Platform): Built 4 production, SQS-triggered AWS Lambda microservices powering core enterprise AI for Third-Party Risk Management.',
+      'Engineered Hybrid RAG control-evaluation engine (Amazon Bedrock + Claude, Milvus vector search, VoyageAI embeddings, hybrid ANN+BM25+RRF retrieval) assessing vendor evidence against SOC 2 / ISO 27001 with exact page citations.',
+      'Hardened production pipeline with LLM prompt guardrails (vendor identity matching, document expiry checks), structured JSON schema outputs with tenacity backoff retries, and zero cross-company result drift.',
+      'Delivered end-to-end cloud infrastructure — configured async concurrent multi-control processing (asyncio + semaphores), STS assumed IAM roles, and keyless OIDC GitHub Actions CI/CD pipelines.',
       'Designed AI-driven voice automation using Retell AI, Twilio, and n8n for lead classification and automated appointment booking in Odoo Calendar.',
-      'Engineered Meddy — a Clinical AI Pipeline that automated extraction and analysis of medical reports (DICOM, X-Rays, PDFs), reducing manual interpretation time by 80%.',
+      'Engineered Meddy — a Clinical AI Pipeline automating extraction and analysis of medical reports & DICOM files, cutting AI hallucinations by 90% and interpretation time by 80%.',
       'Built an MCP server with FastMCP and Next.js to unify Notion, Slack, Gmail, and Google Calendar — enabling Gemini to dynamically select and execute actions.',
       'Developed end-to-end QuickBooks automation workflows (Xcelerate), reducing manual data entry by 80% and streamlining billing processes.',
     ],
@@ -115,6 +123,34 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
+  {
+    title: 'Narad — AI-Powered TPRM Platform',
+    company: 'WebOsmotic',
+    description:
+      'Enterprise AI-powered Third-Party Risk Management (TPRM/GRC) platform. Built 4 production SQS-triggered AWS Lambda microservices and a Hybrid RAG evaluation engine (Amazon Bedrock + Claude, Milvus VectorDB, VoyageAI embeddings) that evaluates vendor evidence documents against SOC 2 / ISO 27001 controls with auditor-grade verdicts and exact page citations.',
+    tech: [
+      'Python',
+      'AWS Lambda',
+      'Amazon Bedrock',
+      'Milvus (VectorDB)',
+      'VoyageAI',
+      'LangChain',
+      'FastAPI',
+      'Hybrid Retrieval (ANN+BM25+RRF)',
+      'Webhooks',
+    ],
+    image: '/projects/naradprevie.png',
+    highlights: [
+      '4 production SQS-triggered AWS Lambda microservices powering enterprise AI',
+      'Hybrid RAG engine (Bedrock + Claude, Milvus, VoyageAI) for SOC 2 / ISO 27001 with exact page citations',
+      'LLM prompt guardrails, structured JSON outputs, and tenacity backoff retries',
+      'Async multi-control concurrency (asyncio + semaphores) & keyless OIDC GitHub Actions CI/CD',
+    ],
+    linkedin: null,
+    github: null,
+    live: null,
+    accent: 'bg-indigo-600',
+  },
   {
     title: 'Meddy — Medical Report Analysis',
     company: 'WebOsmotic',
@@ -313,7 +349,7 @@ function App() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const ids = ['contact', 'journey', 'projects', 'experience', 'skills', 'about', 'hero'];
+      const ids = ['contact', 'journey', 'advocacy', 'projects', 'experience', 'skills', 'about', 'hero'];
       for (const id of ids) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 150) {
@@ -956,6 +992,82 @@ function App() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          TECHNICAL ADVOCACY & COMMUNITY
+          ═══════════════════════════════════════ */}
+      <section id="advocacy" className="py-20 md:py-28 bg-stone-50/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="fade-up">
+            <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">
+              Technical Advocacy & Community
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              AI Content Creation & Technical Education
+            </h2>
+            <p className="text-slate-500 mb-12 max-w-2xl">
+              Demystifying complex artificial intelligence architectures through engaging technical content and video reels.
+            </p>
+          </div>
+
+          <div className="fade-up bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 rounded-2xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden group">
+            {/* Background glowing ambient light */}
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-700 pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-700 pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div className="flex-1 max-w-2xl">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-pink-300 border border-pink-500/30">
+                    <Video size={13} className="text-pink-400" />
+                    AI Content Creator @ WebOsmotic
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-white/10 text-slate-300">
+                    <Instagram size={13} className="text-pink-400" />
+                    Instagram Reels
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 text-white">
+                  Empowering Developers & Stakeholders with AI Technical Reels
+                </h3>
+
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                  Produced educational technical reels explaining advanced Generative AI architectures, RAG systems, and Multi-Agent workflows to demystify complex AI concepts for non-technical stakeholders and developers alike.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {['GenAI Architectures', 'RAG Systems', 'Multi-Agent Workflows', 'Vector Databases', 'Voice AI Agents', 'MCP Tool Calling'].map((topic) => (
+                    <span
+                      key={topic}
+                      className="text-xs px-3 py-1 bg-white/10 text-slate-200 rounded-lg backdrop-blur-sm border border-white/10 font-medium"
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Reel Card Component */}
+              <div className="flex-shrink-0 w-full lg:w-80 bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-md flex flex-col items-center justify-center text-center group/card hover:border-pink-500/40 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-purple-600 via-pink-600 to-amber-500 flex items-center justify-center mb-4 shadow-lg shadow-pink-500/20 group-hover/card:scale-110 transition-transform duration-300">
+                  <Play size={28} className="text-white fill-white ml-1" />
+                </div>
+                <h4 className="text-base font-bold text-white mb-1">Technical Reel Series</h4>
+                <p className="text-xs text-slate-400 mb-4">
+                  Visual breakdowns of LLMs, agentic patterns & production workflows
+                </p>
+                <div className="w-full pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-300 font-medium">
+                  <span className="flex items-center gap-1.5 text-pink-300">
+                    <Sparkles size={13} /> WebOsmotic Presenter
+                  </span>
+                  <span className="text-slate-400">Short-Form Content</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
