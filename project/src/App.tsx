@@ -28,49 +28,61 @@ const NAV_ITEMS = ['About', 'Skills', 'Experience', 'Projects', 'Advocacy', 'Jou
 const SKILL_CATEGORIES = [
   { name: 'Languages', items: ['Python', 'SQL'] },
   {
-    name: 'AI / Machine Learning',
+    name: 'AI / GenAI & Agentic',
     items: [
-      'Machine Learning', 'Deep Learning', 'NLP', 'Generative AI',
-      'RAG', 'Hybrid Retrieval', 'LLMs', 'Agentic AI', 'MCP', 'Voice AI', 'Multi-Agent Systems',
+      'LLMs', 'RAG (Hybrid ANN + BM25 + RRF)', 'Agentic AI', 'Multi-Agent Systems',
+      'MCP', 'Prompt Engineering', 'Model Evaluation & Guardrails', 'Voice AI',
+      'Machine Learning', 'Deep Learning', 'NLP',
     ],
   },
   {
     name: 'Frameworks & Libraries',
-    items: ['FastAPI', 'TensorFlow', 'Keras', 'LangChain', 'LangGraph', 'FastMCP', 'asyncio', 'Tenacity', 'REST APIs'],
+    items: ['FastAPI', 'LangChain', 'LangGraph', 'FastMCP', 'TensorFlow', 'Keras', 'asyncio', 'Tenacity', 'REST APIs'],
   },
-  { name: 'Databases', items: ['SQL', 'NoSQL', 'VectorDB (Milvus)'] },
-  { name: 'Cloud & DevOps', items: ['AWS (Lambda, SQS, S3, IAM)', 'Amazon Bedrock', 'GitHub Actions (OIDC CI/CD)', 'Docker'] },
-  { name: 'Tools', items: ['Git', 'Postman', 'n8n', 'Zapier'] },
+  {
+    name: 'Cloud & MLOps',
+    items: ['AWS (Lambda, SQS, S3, IAM, STS)', 'Amazon Bedrock', 'Docker', 'GitHub Actions (OIDC CI/CD)'],
+  },
+  { name: 'Databases & Vector', items: ['SQL', 'NoSQL', 'Vector Databases (Milvus)'] },
+  {
+    name: 'Automation & Integration',
+    items: ['n8n', 'Zapier', 'Odoo (CRM & Calendar API)', 'Twilio', 'Retell AI', 'QuickBooks API'],
+  },
+  {
+    name: 'Client-Facing Delivery',
+    items: ['Requirements Gathering', 'Solution Scoping', 'Cross-Functional Collaboration', 'End-to-End Ownership', 'Stakeholder Communication'],
+  },
+  { name: 'Tools', items: ['Git', 'Postman', 'Docker'] },
 ];
 
 const EXPERIENCE = [
   {
-    title: 'Jr AI/ML Developer',
+    title: 'Jr. AI/ML Developer',
     company: 'WebOsmotic Pvt Ltd',
     location: 'Surat, Gujarat',
     period: 'Jun 2025 – Present',
     current: true,
     bullets: [
-      'Narad (TPRM Platform): Built 4 production, SQS-triggered AWS Lambda microservices powering core enterprise AI for Third-Party Risk Management.',
-      'Engineered Hybrid RAG control-evaluation engine (Amazon Bedrock + Claude, Milvus vector search, VoyageAI embeddings, hybrid ANN+BM25+RRF retrieval) assessing vendor evidence against SOC 2 / ISO 27001 with exact page citations.',
-      'Hardened production pipeline with LLM prompt guardrails (vendor identity matching, document expiry checks), structured JSON schema outputs with tenacity backoff retries, and zero cross-company result drift.',
+      'Narad (TPRM Platform): Built 4 production, SQS-triggered AWS Lambda microservices powering core enterprise AI for TPRM/GRC, automating control question generation, recommendation, and evidence testing for SOC 2 / ISO 27001 / VAPT audits.',
+      'Engineered Hybrid RAG control-evaluation engine (Amazon Bedrock + Claude, Milvus vector search, VoyageAI embeddings, hybrid ANN+BM25+RRF retrieval) delivering auditor-grade verdicts with rationale and exact page citations.',
+      'Hardened production pipeline with LLM prompt guardrails, structured JSON schema outputs with tenacity backoff retries, and re-architected retrieval to eliminate cross-company result drift.',
       'Delivered end-to-end cloud infrastructure — configured async concurrent multi-control processing (asyncio + semaphores), STS assumed IAM roles, and keyless OIDC GitHub Actions CI/CD pipelines.',
-      'Designed AI-driven voice automation using Retell AI, Twilio, and n8n for lead classification and automated appointment booking in Odoo Calendar.',
-      'Engineered Meddy — a Clinical AI Pipeline automating extraction and analysis of medical reports & DICOM files, cutting AI hallucinations by 90% and interpretation time by 80%.',
-      'Built an MCP server with FastMCP and Next.js to unify Notion, Slack, Gmail, and Google Calendar — enabling Gemini to dynamically select and execute actions.',
-      'Developed end-to-end QuickBooks automation workflows (Xcelerate), reducing manual data entry by 80% and streamlining billing processes.',
+      'Odoo AI Voice Agent (Client: Germany Real Estate Sector): Engaged directly with client to scope and deliver AI-driven voice automation for lead classification & appointment booking across text and voice, removing manual scheduling by 90%.',
+      'Engineered Meddy — a Clinical AI Pipeline automating extraction & analysis of medical reports (DICOM, X-rays, PDFs), cutting AI hallucinations by 90% and manual interpretation time by 80%.',
+      'Built an MCP server in Python (FastMCP + Next.js) unifying Notion, Slack, Gmail, and Google Calendar, wrapping official SDKs as MCP tools for Gemini dynamic tool execution.',
+      'Developed QuickBooks automation workflows (Xcelerate) for client data, invoicing, and billing, cutting manual data entry by 85% via REST APIs and webhooks.',
     ],
   },
   {
     title: 'AI/ML Developer Intern',
-    company: 'Appscrip',
+    company: 'Appscrip (3Embed Software Technologies)',
     location: 'Surat, Gujarat',
     period: 'Feb 2025 – May 2025',
     current: false,
     bullets: [
-      'Built an AI-powered lead generation workflow using Apollo.io, Apify, and n8n — automating collection of ~500 leads per day.',
-      'Used Perplexity API for enriching missing data fields and organizing leads in Google Sheets with deduplication.',
-      'Automated cold mail generation and outreach, improving campaign efficiency by 70%.',
+      'Built an AI-powered lead generation workflow automating collection of ~500 prospects/day across Apollo.io filters, Apify Actor, and n8n.',
+      'Used Perplexity API to enrich missing lead fields and stored deduplicated data in Google Sheets for downstream sales use.',
+      'Automated cold-mail generation and sending, improving outreach campaign efficiency by 70%.',
     ],
   },
   {
@@ -80,8 +92,7 @@ const EXPERIENCE = [
     period: 'Jul 2024 – Sept 2024',
     current: false,
     bullets: [
-      'Performed EV market customer segmentation using K-Means clustering and PCA.',
-      'Applied data preprocessing and feature engineering for pattern discovery, generating business insights for high-potential customer segments.',
+      'Performed EV customer segmentation using K-Means clustering and PCA, applying feature engineering to identify high-potential customer segments.',
     ],
   },
   {
@@ -91,9 +102,7 @@ const EXPERIENCE = [
     period: 'Apr 2024 – Jun 2024',
     current: false,
     bullets: [
-      'Processed daily/monthly delivery data from Zomato, Swiggy, and Blinkit using advanced Excel and Power BI dashboards.',
-      'Optimized rider schedules and incentive structures, resulting in a 15% increase in deliveries.',
-      'Deployed fleet analytics dashboards, reducing downtime by 25% through proactive maintenance insights.',
+      'Built fleet analytics dashboards (Excel, DAX, Power BI) processing daily/monthly delivery data from Zomato, Swiggy, and Blinkit, lifting deliveries by 15% and cutting downtime by 25% via proactive maintenance.',
     ],
   },
   {
@@ -103,8 +112,8 @@ const EXPERIENCE = [
     period: 'Aug 2023 – Mar 2024',
     current: false,
     bullets: [
-      'Processed 10,000+ records using advanced Excel, improving data accuracy by 25%.',
-      'Designed a time tracking strategy that enhanced employee management efficiency by 20% and increased production output by 15%.',
+      'Processed 10,000+ records using advanced Excel techniques, improving payroll/compliance data accuracy by 25%.',
+      'Implemented a time-tracking strategy that improved employee management efficiency by 20% and production output by 15%.',
     ],
   },
 ];
@@ -127,7 +136,7 @@ const PROJECTS: Project[] = [
     title: 'Narad — AI-Powered TPRM Platform',
     company: 'WebOsmotic',
     description:
-      'Enterprise AI-powered Third-Party Risk Management (TPRM/GRC) platform. Built 4 production SQS-triggered AWS Lambda microservices and a Hybrid RAG evaluation engine (Amazon Bedrock + Claude, Milvus VectorDB, VoyageAI embeddings) that evaluates vendor evidence documents against SOC 2 / ISO 27001 controls with auditor-grade verdicts and exact page citations.',
+      'Enterprise AI-powered Third-Party Risk Management (TPRM/GRC) platform. Built 4 production SQS-triggered AWS Lambda microservices and a Hybrid RAG evaluation engine (Amazon Bedrock + Claude, Milvus VectorDB, VoyageAI embeddings) that evaluates vendor evidence documents against SOC 2 / ISO 27001 / VAPT audit controls with auditor-grade verdicts and exact page citations.',
     tech: [
       'Python',
       'AWS Lambda',
@@ -142,7 +151,7 @@ const PROJECTS: Project[] = [
     image: '/projects/naradprevie.png',
     highlights: [
       '4 production SQS-triggered AWS Lambda microservices powering enterprise AI',
-      'Hybrid RAG engine (Bedrock + Claude, Milvus, VoyageAI) for SOC 2 / ISO 27001 with exact page citations',
+      'Hybrid RAG engine (Bedrock + Claude, Milvus, VoyageAI) for SOC 2 / ISO 27001 / VAPT audits',
       'LLM prompt guardrails, structured JSON outputs, and tenacity backoff retries',
       'Async multi-control concurrency (asyncio + semaphores) & keyless OIDC GitHub Actions CI/CD',
     ],
@@ -171,15 +180,15 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'Odoo Lead Classification & AI Voice Agent',
-    company: 'WebOsmotic',
+    company: 'WebOsmotic (Client: Germany)',
     description:
-      'AI-driven voice automation workflows using Retell AI, Twilio, and n8n for intelligent lead classification (Good/Bad Lead) and automated appointment booking within Odoo Calendar. Supports both text and voice-based decision-making.',
+      'Engaged directly with a German real estate management client to scope & deliver AI-driven voice automation workflows using Retell AI, Twilio, and n8n for lead classification (Good/Bad Lead) and automated appointment booking within Odoo Calendar across text and voice channels.',
     tech: ['n8n', 'Gemini API', 'Odoo CRM', 'Retell AI', 'Twilio'],
     image: '/projects/odoo_automation.png',
     highlights: [
-      'Automated Good/Bad Lead classification',
-      'Voice + text-based decision-making',
-      'Callback workflow automation in Odoo',
+      'Direct client-facing requirement scoping & end-to-end delivery',
+      '90% reduction in manual scheduling steps in Odoo Calendar',
+      'Automated Good/Bad Lead classification across voice + text channels',
     ],
     linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7415713518483906560/',
     github: null,
@@ -246,7 +255,7 @@ const PROJECTS: Project[] = [
     tech: ['QuickBooks API', 'JavaScript', 'n8n', 'Xcelerate API', 'Google Drive'],
     image: '/projects/quickbooks.png',
     highlights: [
-      '80% reduction in manual data entry',
+      '85% reduction in manual data entry',
       'Webhook-based data synchronization',
       'Streamlined financial operations',
     ],
@@ -529,9 +538,15 @@ function App() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Text content */}
             <div className="flex-1">
-              <div className="flex items-center gap-2 text-slate-400 text-sm mb-5">
-                <MapPin size={14} />
-                <span>Surat, Gujarat</span>
+              <div className="flex flex-wrap items-center gap-3 text-slate-400 text-sm mb-5">
+                <div className="flex items-center gap-1.5">
+                  <MapPin size={14} className="text-slate-400" />
+                  <span>Surat, Gujarat, India</span>
+                </div>
+                <span className="text-slate-300">•</span>
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                  Open to Relocation
+                </span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-4 leading-[1.08]">
@@ -539,13 +554,11 @@ function App() {
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold text-blue-600 mb-6">
-                Applied AI/ML Engineer
+                AI / ML Engineer — LLM Systems, RAG & Agentic Automation
               </p>
 
               <p className="text-base md:text-lg text-slate-500 mb-10 leading-relaxed max-w-2xl">
-                2+ years building Generative AI applications, RAG systems, AI agents, and
-                automation workflows. Skilled in Python, FastAPI, and n8n — turning complex
-                problems into scalable AI solutions for real-world business use cases.
+                2+ years shipping production Generative AI systems: hybrid RAG pipelines, multi-agent & MCP-based agentic workflows, and cloud-deployed LLM microservices on AWS Bedrock & Lambda. Experienced embedding directly with clients for requirement scoping and end-to-end delivery.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -594,13 +607,14 @@ function App() {
           </div>
 
           <div className="fade-up fade-up-delay-1 max-w-3xl mb-14">
-            <p className="text-slate-600 leading-relaxed text-base md:text-lg">
+            <p className="text-slate-600 leading-relaxed text-base md:text-lg mb-4">
               I started my career running a Pathology Medical Lab, where I developed a deep
-              appreciation for data accuracy and process optimization. That hands-on experience
-              with healthcare workflows naturally led me toward data science and eventually into
-              AI/ML engineering. Today I build Generative AI applications, RAG systems, AI agents,
-              MCP Servers, and automation workflows — integrating APIs, vector databases, voice
-              agents, and CRM platforms to solve real business problems.
+              appreciation for data accuracy and process optimization. That analytical background
+              naturally led me into AI/ML engineering, where I now build production-grade Generative AI systems,
+              hybrid RAG pipelines, multi-agent workflows, and MCP-based agentic architectures.
+            </p>
+            <p className="text-slate-600 leading-relaxed text-base md:text-lg">
+              Beyond core algorithm & model engineering, I am comfortable embedding directly with international clients for gathering requirements, solution scoping, and owning delivery end-to-end from initial prototype to cloud production deployment.
             </p>
           </div>
 
